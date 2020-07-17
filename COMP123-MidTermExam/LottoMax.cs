@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+/*
+    Author name : Wooram Moon
+    Author's student number : 301098673
+    Date last Modified : July 17th, 2020
+    Program description : Lottery random numbers
+    1st Revision : July 15th, 2020
+    2nd Revision : July 16th, 2020
+    3rd Revision : July 17th, 2020
+ */
 
 namespace COMP123_MidTermExam
 {
