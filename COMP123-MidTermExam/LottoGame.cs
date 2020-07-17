@@ -20,22 +20,64 @@ namespace COMP123_MidTermExam
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE private fields here --------------------------------------------
-        List<int> _elememntList;
-        int _elementList;
-        List<int>_elementNumber;
-        int _numberList;
-        Random _random;
-        int _setSize;
+        private List<int> _elememntList;
+        private int _elementList;
+        private List<int> _numberList;
+        private int _elementNumber;
+        private Random _random;
+        private int _setSize;
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE public properties here -----------------------------------------
-        List<int> ElementList { get; set; }
-        int ElementNumber { get; set; }
-        List<int> NumberList { get; }
-        Random random { get; }
-        int SetSize { get; set; }
-        // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        List<int> ElementList
+        {
+            get
+            {
+                return this._elememntList;
+            }
+        }
+        int ElementNumber
+        {
+            get
+            {
+                return this._elementNumber;
+            }
 
+            set
+            {
+                this._elementNumber = value;
+            }
+
+        }
+        List<int> NumberList
+        {
+            get
+            {
+                return this._numberList;
+            }
+
+        }
+        Random random
+        {
+            get
+            {
+                return this._random;
+            }
+        }
+        int SetSize
+        {
+            get
+            {
+                return this._setSize;
+            }
+
+            set
+            {
+                this._setSize = value;
+            }
+
+        }
+        // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         /**
          * <summary>
          * This constructor takes two parameters: elementNumber and setSize
@@ -63,20 +105,20 @@ namespace COMP123_MidTermExam
         }
 
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        private LottoGame()
-        {
-        }
         // CREATE the private _initialize method here -----------------------------
         private void _initialize()
         {
-            _elememntList = new Int32;
-            _elementNumber = new LottoGame();
-            _random = new Vector2D();
+            this._elememntList = new List<int>();
+            this._numberList = new List<int>();
+            this._random = new Random(); 
         }
         // CREATE the private _build method here -----------------------------------
         private void _build()
-        { 
-            
+        {
+            for (int i = 0; i < SetSize; i++) {
+                NumberList.Add(i + 1);
+
+            }
         }
         // OVERRIDEN METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         /**
@@ -109,7 +151,23 @@ namespace COMP123_MidTermExam
         // CREATE the public PickElements method here ----------------------------
         public void PickElements()
         {
+            if (ElementList.Count > 0) {
+                ElementList.Clear();
+                NumberList.Clear();
 
+                _build();
+            }
+
+            for (int i = 0; i < ElementNumber; i++)
+            { 
+               int lottery = _random.Next(NumberList.Count);                                // element list real number, numberlist = how many list you have
+                
+                ElementList.Add(NumberList[lottery]);                                             // Add 
+                NumberList.RemoveAt(lottery);                                           // remove above
+
+            }
+
+            ElementList.Sort();
         }
     }
 }
