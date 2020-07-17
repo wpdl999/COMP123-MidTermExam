@@ -21,22 +21,21 @@ namespace COMP123_MidTermExam
 
         // CREATE private fields here --------------------------------------------
         private List<int> _elememntList;
-        private int _elementList;
-        private List<int> _numberList;
         private int _elementNumber;
+        private List<int> _numberList;
         private Random _random;
         private int _setSize;
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE public properties here -----------------------------------------
-        List<int> ElementList
+        public List<int> ElementList
         {
             get
             {
                 return this._elememntList;
             }
         }
-        int ElementNumber
+        public int ElementNumber
         {
             get
             {
@@ -49,7 +48,7 @@ namespace COMP123_MidTermExam
             }
 
         }
-        List<int> NumberList
+        public List<int> NumberList
         {
             get
             {
@@ -57,14 +56,14 @@ namespace COMP123_MidTermExam
             }
 
         }
-        Random random
+        public Random random
         {
             get
             {
                 return this._random;
             }
         }
-        int SetSize
+        public int SetSize
         {
             get
             {
@@ -162,7 +161,7 @@ namespace COMP123_MidTermExam
             { 
                int lottery = _random.Next(NumberList.Count);                                // element list real number, numberlist = how many list you have
                 
-                ElementList.Add(NumberList[lottery]);                                             // Add 
+                ElementList.Add(NumberList[lottery]);                                    // Add 
                 NumberList.RemoveAt(lottery);                                           // remove above
 
             }

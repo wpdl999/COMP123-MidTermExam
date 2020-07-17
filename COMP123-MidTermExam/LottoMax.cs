@@ -34,7 +34,7 @@ namespace COMP123_MidTermExam
             for (int i = 1; i < 7; i++)
             {
                 this.PickElements();
-                Console.Write($"Ticket   {i}:");
+                Console.Write($"Ticket   {i}: ");
                 Console.WriteLine(this.ToString());
             }
         }
